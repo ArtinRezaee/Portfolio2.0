@@ -1,0 +1,36 @@
+<div class="dialogWrapper">
+  <div mat-dialog-content>
+    <div class="img-container">
+      <img
+        alt="{{ project.name }}"
+        src="{{ project.imgUrl }}"
+        class="project-img"
+      />
+    </div>
+    <div class="title">
+      <h2>{{ project.name }}</h2>
+    </div>
+    <div class="desc-container">
+      <p class="project-p">
+        {{ project.description }}
+      </p>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="project-links" *ngIf="project.demoLink || project.repoLink">
+    <button
+      mat-icon-button
+      *ngIf="project.repoLink"
+      (click)="goToLink(project.repoLink)"
+    >
+      <mat-icon fontSet="fa" fontIcon="fa-github" class="repo"></mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      *ngIf="project.demoLink"
+      (click)="goToLink(project.demoLink)"
+    >
+      <mat-icon>open_in_new</mat-icon>
+    </button>
+  </div>
+</div>

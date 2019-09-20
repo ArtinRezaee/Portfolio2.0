@@ -1,0 +1,524 @@
+/* ====================
+  General
+=======================*/
+
+.custom-section {
+  padding: 50px 2%;
+  background-size: cover;
+  overflow: hidden;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+.container {
+  padding-right: 3%;
+  padding-left: 3%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+}
+
+/* ====================
+  Menu Section
+=======================*/
+
+.header-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.menu {
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+}
+
+.menu .row{
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  position: fixed;
+}
+
+.menu .custom-button {
+  background:transparent;
+  color:white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+}
+
+.menu a.custom-button:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  color: gainsboro;
+  transition: width .3s;
+}
+
+.menu a.custom-button:hover:after {
+  width: 100%;
+}
+
+.menu .selected {
+  color: gainsboro;
+}
+
+.menu a.selected:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: gainsboro;
+}
+
+.sticky-menu {
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: fixed;
+  top:0;
+  background: black;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-links {
+  padding: 0 14px;
+}
+
+.mobileMenuStyle {
+  display: block;
+  position: fixed;
+  width: 100%;
+  color: white;
+  background: black;
+  z-index: 6;
+}
+
+.mobile-links {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mobile-selected {
+  color: gainsboro;
+}
+
+:host /deep/ .mat-list-item-content {
+  justify-content: center;
+}
+
+/* ====================
+  Intro Section
+=======================*/
+.intro-section {
+  height: 100%;
+  min-height: available;
+  display: block;
+}
+
+.intro-bg {
+  background-image: url("../../../assets/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow:inset 0 0 0 2000px rgba(36, 38, 36, 0.52);
+}
+
+.bg-cms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.intro-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: table;
+}
+
+.intro-inner .intro-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.intro-text {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+}
+
+.header {
+  margin-bottom: 0.2em;
+  font-size: 80px;
+}
+
+.sub-header {
+  margin-top: 0;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.fix{
+  overflow: hidden;
+}
+
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  display: inline-block;
+  width: 100%;
+  overflow:hidden;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+
+/* ====================
+  About Section
+=======================*/
+.about-img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.about-p {
+  line-height: 30px;
+  color: white;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* ====================
+  Experiences Section
+=======================*/
+
+.experience-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Sans Pro", arial, sans-serif;
+}
+
+.timeline {
+  width: 100%;
+  max-width: 900px;
+  color: white;
+  padding: 100px 50px;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: calc(33% + 15px);
+  bottom: 0px;
+  width: 4px;
+  background: #ddd;
+}
+
+.timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.entry {
+  clear: both;
+  text-align: left;
+  position: relative;
+}
+
+.entry .title {
+  margin-bottom: 0.5em;
+  float: left;
+  width: 33%;
+  position: relative;
+}
+
+.entry .title:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 4px solid salmon;
+  background-color: #fff;
+  border-radius: 100%;
+  top: 15%;
+  right: -8px;
+  z-index: 99;
+}
+
+.entry .title h3 {
+  margin: 0;
+  font-size: 120%;
+}
+
+.entry .title p {
+  margin: 0;
+  font-size: 100%;
+}
+
+.entry .body {
+  margin: 0 0 3em;
+  float: right;
+  width: 60%;
+}
+
+.entry .body p {
+  line-height: 1.4em;
+}
+
+.entry .body p:first-child {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.entry .body ul {
+  color: #aaa;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.entry .body ul li {
+  margin-top: 0.5em;
+}
+
+.entry .body ul li:before {
+  content: "–";
+  margin-right: 0.5em;
+}
+
+/* ====================
+  Projects Section
+=======================*/
+
+.content {
+  position: absolute;
+}
+
+.project-img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  width: available;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.content .overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .overlay {
+  opacity: 1;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  user-select: none;
+}
+
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3 {
+  color: #fff;
+  letter-spacing: 0.15em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 26px;
+}
+
+.content-details p{
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+.project-button {
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  border: white solid 1px;
+  border-radius: 20px;
+}
+
+button.project-button:hover {
+  color: black;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ====================
+  Contact Section
+=======================*/
+
+.custom-form-field {
+  width: 100%;
+}
+
+input {
+  width: 100% !important;
+  color: white;
+  caret-color: white;
+}
+
+textarea {
+  color: white;
+  caret-color: white;
+}
+
+.mat-error {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button {
+  background: transparent;
+  border: white solid 1px;
+  border-radius: 30px;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+  color: white;
+}
+
+button.form-button:hover {
+  color: black;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ====================
+  Social Section
+=======================*/
+
+.social-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.form-button-div .social-button {
+  margin: 16px;
+}

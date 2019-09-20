@@ -1,0 +1,11 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.title {
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}

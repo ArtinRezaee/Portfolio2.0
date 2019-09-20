@@ -1,0 +1,12 @@
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  border-radius: 30px;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+  background: black;
+  color: white;
+  width: 100px;
+}

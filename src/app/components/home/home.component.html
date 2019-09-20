@@ -1,0 +1,355 @@
+<body>
+  <header class="header-section">
+    <mat-toolbar class="menu">
+      <mat-toolbar-row
+        [ngClass]="{ 'sticky-menu': scrolled, row: !scrolled }"
+        [style.background]="mobileMenuCollapse ? 'black' : ''"
+      >
+        <span></span>
+        <span class="toolbar-spacer"></span>
+        <div
+          *ngIf="
+            !(
+              screenType === 'HandsetPortrait' ||
+              screenType == 'HandsetLandscape'
+            )
+          "
+        >
+          <a
+            *ngFor="let section of toolbarSections"
+            class="toolbar-links custom-button"
+            (click)="onSectionSelect(section)"
+            [class.selected]="selectedSection === section"
+          >
+            {{ section }}
+          </a>
+        </div>
+        <div
+          *ngIf="
+            screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
+          "
+        >
+          <button mat-icon-button aria-label (click)="toggleMobileMenu()">
+            <mat-icon>{{ mobileMenuIcon }}</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div
+      *ngIf="mobileMenuCollapse"
+      [ngClass]="{ mobileMenuStyle: mobileMenuCollapse }"
+    >
+      <mat-list>
+        <mat-nav-list>
+          <a
+            mat-list-item
+            *ngFor="let section of toolbarSections"
+            class="toolbar-links mobile-links"
+            (click)="onSectionSelect(section)"
+            [class.mobile-selected]="selectedSection === section"
+          >
+            {{ section }}
+          </a>
+        </mat-nav-list>
+      </mat-list>
+    </div>
+  </header>
+  <section id="Home" class="intro-section fix">
+    <div class="intro-bg bg-cms">
+      <div class="intro-inner">
+        <div class="intro-content">
+          <div class="intro-text fadeIn">
+            <h2 class="header">
+              Artin Rezaee
+            </h2>
+            <h2 class="sub-header">Software Developer</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="About" class="custom-section">
+    <div class="container">
+      <div [class.fadeIn]="selectedSection === 'About'">
+        <div class="section-title">
+          <h2>About</h2>
+        </div>
+        <mat-grid-list
+          [cols]="
+            screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
+              ? 1
+              : 2
+          "
+          [rowHeight]="
+            screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
+              ? '550px'
+              : '400px'
+          "
+          gutterSize="50px"
+        >
+          <mat-grid-tile colspan="1" rowspan="1">
+            <img
+              alt="about image"
+              src="../../../assets/pic.png"
+              class="about-img"
+            />
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <p class="about-p">
+              I am Artin Rezaee, a Software Engineering student from Calgary,
+              Alberta; Expericenced in web, mobile, and desktop application
+              development. Some of my other areas of interest are Big Data and
+              Data Science, Cloud Computing, Distributed Programming, and
+              Progressive Web Apps. I have previous experience working and
+              creating software for Calgary based startups. Aside from
+              programming, I enjoy producing music, following news, reading
+              political analyses, traveling, and learning about different
+              cultures.
+            </p>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </section>
+  <section id="Experience" class="custom-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experiences</h2>
+      </div>
+      <div class="experience-body">
+        <div class="timeline">
+          <div class="entry">
+            <div class="title">
+              <h3>Present</h3>
+              <p>Student, University of Calgary</p>
+            </div>
+            <div class="body">
+              <p>I am currently back in school to finish my degree in Software Engineering</p>
+              <ul>
+                <li>Full-time student in Fall 2019</li>
+                <li>Part-time student in Winter 2020 while completing capstone project</li>
+                <li>Available for full-time employment starting January 2020</li>
+              </ul>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="title">
+              <h3>2018 - 2019</h3>
+              <p>RTS and Applications Intern, TC Energy</p>
+            </div>
+            <div class="body">
+              <p>Interned as an Application Developer with the RTS and Applications team in SCADA and Engineering Department</p>
+              <ul>
+                <li>Designed and implemented a responsive Angular web application to visualize historical and real- time gas, liquid, and power data collected from field sites. Successfully reduced company costs by $250,000</li>
+                <li>Held Angular training workshops for team members which reduced company costs by $15,000</li>
+                <li>Worked with pipeline operators, engineers, and field personnel to test, tune, and troubleshoot real-time applications</li>
+                <li>Troubleshot, implemented, and configured data interfaces from field sites to central systems</li>
+                <li>Supported calls and incident tickets from clients and other business units</li>
+              </ul>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="title">
+              <h3>2017 - 2019</h3>
+              <p>Senior Student Leader, Schulich Ignite</p>
+            </div>
+            <div class="body">
+              <p>Led a team of students to organize programming workshops for prospective engineering students</p>
+              <ul>
+                <li>Designed and delivered Java workshops to teach programming to High School students</li>
+                <li>Conducted regular follow-up meetings with mentors to ensure the successful execution of the program and find areas of improvement</li>
+                <li>Implemented program execution plans such as student registrations and student feedback surveys</li>
+                <li>Compiled end-of-workshop reports for sponsors and stakeholders which included suggestions for improvements based on student and mentor feedback</li>
+              </ul>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="title">
+              <h3>2014</h3>
+              <p>Student, University of Calgary</p>
+            </div>
+            <div class="body">
+              <p>Started my studies in Bachelor of Science in Software Engineering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Projects" class="custom-section">
+    <div class="container">
+      <div [class.fadeIn]="selectedSection === 'Projects'">
+        <div class="section-title">
+          <h2>Projects</h2>
+        </div>
+        <mat-grid-list
+          [cols]="
+            screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
+              ? 1
+              : 3
+          "
+          [rowHeight]="
+            screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
+              ? '550px'
+              : '400px'
+          "
+        >
+          <mat-grid-tile
+            *ngFor="let project of projects"
+            colspan="1"
+            rowspan="1"
+            class="content"
+          >
+            <img
+              alt="{{ project.name }}"
+              src="{{ project.imgUrl }}"
+              class="project-img"
+            />
+            <div class="overlay"></div>
+            <div class="content-details fadeIn-bottom">
+              <h3>{{ project.name }}</h3>
+              <button
+                mat-button
+                class="project-button"
+                (click)="onProjectSelect(project)"
+              >
+                Learn More
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </section>
+  <section id="Contact" class="custom-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>I'd love to chat</h2>
+      </div>
+      <form [formGroup]="form">
+        <mat-grid-list
+          [cols]="
+            screenType === 'HandsetPortrait' ||
+            screenType == 'HandsetLandscape'
+              ? 1
+              : 2
+          "
+          [rowHeight]="'100px'"
+          [gutterSize]="
+            screenType === 'HandsetPortrait' ||
+            screenType == 'HandsetLandscape'
+              ? '0px'
+              : '50px'
+          "
+        >
+          <mat-grid-tile colspan="1" rowspan="1">
+            <mat-form-field class="custom-form-field">
+              <input
+                matInput
+                formControlName="name"
+                placeholder="Name"
+                required
+                type="text"
+                minlength="1"
+                maxlength="40"
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['name'].touched &&
+                  form.controls['name'].hasError('required')
+                "
+              >
+                Name is required
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <mat-form-field class="custom-form-field">
+              <input
+                matInput
+                formControlName="email"
+                placeholder="Email"
+                required
+                type="email"
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['email'].touched &&
+                  form.controls['email'].hasError('required')
+                "
+              >
+                Email is required
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  form.controls['email'].touched &&
+                  form.controls['email'].hasError('email')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <p>
+          <mat-form-field class="custom-form-field">
+            <textarea
+              matInput
+              formControlName="message"
+              placeholder="Message"
+              rows="8"
+              required
+              type="text"
+              minlength="1"
+              maxlength="250"
+            ></textarea>
+            <mat-error
+              *ngIf="
+                form.controls['message'].touched &&
+                form.controls['message'].hasError('required')
+              "
+            >
+              Message is required
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <div class="form-button-div">
+          <button mat-flat-button class="form-button" (click)="onSendEmail()">
+            <mat-icon>send</mat-icon>
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section id="social" class="custom-section">
+    <div class="container">
+      <div class="form-button-div">
+        <button
+          class="social-button"
+          mat-icon-button
+          style="background: #333"
+          (click)="onSocial('github')"
+        >
+          <mat-icon
+            fontSet="fa"
+            fontIcon="fa-github"
+            class="social-icon"
+          ></mat-icon>
+        </button>
+        <button
+          class="social-button"
+          mat-icon-button
+          style="background: #2678b5"
+          (click)="onSocial('linkedIn')"
+        >
+          <mat-icon
+            fontSet="fa"
+            fontIcon="fa-linkedin"
+            class="social-icon"
+          ></mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+</body>

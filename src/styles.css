@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body, html {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+}
+
+.dialogWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding-top: 0;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: white;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: white !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: white !important;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: salmon !important;
+}
