@@ -128,7 +128,7 @@ export class HomeComponent implements OnInit {
   /**
    * Listens to the scroll event in order to determine whether the toolbar should be transparent or not
    */
-  @HostListener('window: scroll', ['$event']) onWindowScroll() {
+  @HostListener('window: scroll') onWindowScroll() {
     window.scrollY <= 15 ? this.scrolled = false : this.scrolled = true;
   }
 
