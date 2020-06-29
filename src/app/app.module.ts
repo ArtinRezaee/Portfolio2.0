@@ -1,18 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MatToolbarModule,
-  MatButtonModule,
-  MatIconModule,
-  MatIconRegistry,
-  MatListModule,
-  MatGridListModule,
-  MatCardModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatProgressSpinnerModule,
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
