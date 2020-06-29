@@ -1,53 +1,35 @@
 <body>
   <header class="header-section">
     <mat-toolbar class="menu">
-      <mat-toolbar-row
-        [ngClass]="{ 'sticky-menu': scrolled, row: !scrolled }"
-        [style.background]="mobileMenuCollapse ? 'black' : ''"
-      >
+      <mat-toolbar-row [ngClass]="{ 'sticky-menu': scrolled, row: !scrolled }"
+        [style.background]="mobileMenuCollapse ? 'black' : ''">
         <span></span>
         <span class="toolbar-spacer"></span>
-        <div
-          *ngIf="
+        <div *ngIf="
             !(
               screenType === 'HandsetPortrait' ||
               screenType == 'HandsetLandscape'
             )
-          "
-        >
-          <a
-            *ngFor="let section of toolbarSections"
-            class="toolbar-links custom-button"
-            (click)="onSectionSelect(section)"
-            [class.selected]="selectedSection === section"
-          >
+          ">
+          <a *ngFor="let section of toolbarSections" class="toolbar-links custom-button"
+            (click)="onSectionSelect(section)" [class.selected]="selectedSection === section">
             {{ section }}
           </a>
         </div>
-        <div
-          *ngIf="
+        <div *ngIf="
             screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
-          "
-        >
+          ">
           <button mat-icon-button aria-label (click)="toggleMobileMenu()">
             <mat-icon>{{ mobileMenuIcon }}</mat-icon>
           </button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
-    <div
-      *ngIf="mobileMenuCollapse"
-      [ngClass]="{ mobileMenuStyle: mobileMenuCollapse }"
-    >
+    <div *ngIf="mobileMenuCollapse" [ngClass]="{ mobileMenuStyle: mobileMenuCollapse }">
       <mat-list>
         <mat-nav-list>
-          <a
-            mat-list-item
-            *ngFor="let section of toolbarSections"
-            class="toolbar-links mobile-links"
-            (click)="onSectionSelect(section)"
-            [class.mobile-selected]="selectedSection === section"
-          >
+          <a mat-list-item *ngFor="let section of toolbarSections" class="toolbar-links mobile-links"
+            (click)="onSectionSelect(section)" [class.mobile-selected]="selectedSection === section">
             {{ section }}
           </a>
         </mat-nav-list>
@@ -74,25 +56,17 @@
         <div class="section-title">
           <h2>About</h2>
         </div>
-        <mat-grid-list
-          [cols]="
+        <mat-grid-list [cols]="
             screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
               ? 1
               : 2
-          "
-          [rowHeight]="
+          " [rowHeight]="
             screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
               ? '550px'
               : '400px'
-          "
-          gutterSize="50px"
-        >
+          " gutterSize="50px">
           <mat-grid-tile colspan="1" rowspan="1">
-            <img
-              alt="about image"
-              src="../../../assets/pic.png"
-              class="about-img"
-            />
+            <img alt="about image" src="../../../assets/pic.png" class="about-img" />
           </mat-grid-tile>
           <mat-grid-tile colspan="1" rowspan="1">
             <p class="about-p">
@@ -121,14 +95,31 @@
           <div class="entry">
             <div class="title">
               <h3>Present</h3>
+              <p>Full Stack Developer, Replicon</p>
+            </div>
+            <div class="body">
+              <p>I am currently working as a Full Stack Software Developer at Replicon</p>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="title">
+              <h3>2020</h3>
               <p>Student, University of Calgary</p>
             </div>
             <div class="body">
-              <p>I am currently back in school to finish my degree in Software Engineering</p>
+              <p>Graduated from University of Calgary with a Bachelor of Science in Software Engineering</p>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="title">
+              <h3>2019</h3>
+              <p>Student, University of Calgary</p>
+            </div>
+            <div class="body">
+              <p>Back in school to finish my degree in Software Engineering</p>
               <ul>
                 <li>Full-time student in Fall 2019</li>
                 <li>Part-time student in Winter 2020 while completing capstone project</li>
-                <li>Available for full-time employment starting January 2020</li>
               </ul>
             </div>
           </div>
@@ -138,11 +129,15 @@
               <p>RTS and Applications Intern, TC Energy</p>
             </div>
             <div class="body">
-              <p>Interned as an Application Developer with the RTS and Applications team in SCADA and Engineering Department</p>
+              <p>Interned as an Application Developer with the RTS and Applications team in SCADA and Engineering
+                Department</p>
               <ul>
-                <li>Designed and implemented a responsive Angular web application to visualize historical and real- time gas, liquid, and power data collected from field sites. Successfully reduced company costs by $250,000</li>
+                <li>Designed and implemented a responsive Angular web application to visualize historical and real- time
+                  gas, liquid, and power data collected from field sites. Successfully reduced company costs by $250,000
+                </li>
                 <li>Held Angular training workshops for team members which reduced company costs by $15,000</li>
-                <li>Worked with pipeline operators, engineers, and field personnel to test, tune, and troubleshoot real-time applications</li>
+                <li>Worked with pipeline operators, engineers, and field personnel to test, tune, and troubleshoot
+                  real-time applications</li>
                 <li>Troubleshot, implemented, and configured data interfaces from field sites to central systems</li>
                 <li>Supported calls and incident tickets from clients and other business units</li>
               </ul>
@@ -157,9 +152,11 @@
               <p>Led a team of students to organize programming workshops for prospective engineering students</p>
               <ul>
                 <li>Designed and delivered Java workshops to teach programming to High School students</li>
-                <li>Conducted regular follow-up meetings with mentors to ensure the successful execution of the program and find areas of improvement</li>
+                <li>Conducted regular follow-up meetings with mentors to ensure the successful execution of the program
+                  and find areas of improvement</li>
                 <li>Implemented program execution plans such as student registrations and student feedback surveys</li>
-                <li>Compiled end-of-workshop reports for sponsors and stakeholders which included suggestions for improvements based on student and mentor feedback</li>
+                <li>Compiled end-of-workshop reports for sponsors and stakeholders which included suggestions for
+                  improvements based on student and mentor feedback</li>
               </ul>
             </div>
           </div>
@@ -182,37 +179,21 @@
         <div class="section-title">
           <h2>Projects</h2>
         </div>
-        <mat-grid-list
-          [cols]="
+        <mat-grid-list [cols]="
             screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
               ? 1
               : 3
-          "
-          [rowHeight]="
+          " [rowHeight]="
             screenType === 'HandsetPortrait' || screenType == 'HandsetLandscape'
               ? '550px'
               : '400px'
-          "
-        >
-          <mat-grid-tile
-            *ngFor="let project of projects"
-            colspan="1"
-            rowspan="1"
-            class="content"
-          >
-            <img
-              alt="{{ project.name }}"
-              src="{{ project.imgUrl }}"
-              class="project-img"
-            />
+          ">
+          <mat-grid-tile *ngFor="let project of projects" colspan="1" rowspan="1" class="content">
+            <img alt="{{ project.name }}" src="{{ project.imgUrl }}" class="project-img" />
             <div class="overlay"></div>
             <div class="content-details fadeIn-bottom">
               <h3>{{ project.name }}</h3>
-              <button
-                mat-button
-                class="project-button"
-                (click)="onProjectSelect(project)"
-              >
+              <button mat-button class="project-button" (click)="onProjectSelect(project)">
                 Learn More
               </button>
             </div>
@@ -227,65 +208,42 @@
         <h2>I'd love to chat</h2>
       </div>
       <form [formGroup]="form">
-        <mat-grid-list
-          [cols]="
+        <mat-grid-list [cols]="
             screenType === 'HandsetPortrait' ||
             screenType == 'HandsetLandscape'
               ? 1
               : 2
-          "
-          [rowHeight]="'100px'"
-          [gutterSize]="
+          " [rowHeight]="'100px'" [gutterSize]="
             screenType === 'HandsetPortrait' ||
             screenType == 'HandsetLandscape'
               ? '0px'
               : '50px'
-          "
-        >
+          ">
           <mat-grid-tile colspan="1" rowspan="1">
             <mat-form-field class="custom-form-field">
-              <input
-                matInput
-                formControlName="name"
-                placeholder="Name"
-                required
-                type="text"
-                minlength="1"
-                maxlength="40"
-              />
-              <mat-error
-                *ngIf="
+              <input matInput formControlName="name" placeholder="Name" required type="text" minlength="1"
+                maxlength="40" />
+              <mat-error *ngIf="
                   form.controls['name'].touched &&
                   form.controls['name'].hasError('required')
-                "
-              >
+                ">
                 Name is required
               </mat-error>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile colspan="1" rowspan="1">
             <mat-form-field class="custom-form-field">
-              <input
-                matInput
-                formControlName="email"
-                placeholder="Email"
-                required
-                type="email"
-              />
-              <mat-error
-                *ngIf="
+              <input matInput formControlName="email" placeholder="Email" required type="email" />
+              <mat-error *ngIf="
                   form.controls['email'].touched &&
                   form.controls['email'].hasError('required')
-                "
-              >
+                ">
                 Email is required
               </mat-error>
-              <mat-error
-                *ngIf="
+              <mat-error *ngIf="
                   form.controls['email'].touched &&
                   form.controls['email'].hasError('email')
-                "
-              >
+                ">
                 Please enter a valid email address
               </mat-error>
             </mat-form-field>
@@ -293,22 +251,12 @@
         </mat-grid-list>
         <p>
           <mat-form-field class="custom-form-field">
-            <textarea
-              matInput
-              formControlName="message"
-              placeholder="Message"
-              rows="8"
-              required
-              type="text"
-              minlength="1"
-              maxlength="250"
-            ></textarea>
-            <mat-error
-              *ngIf="
+            <textarea matInput formControlName="message" placeholder="Message" rows="8" required type="text"
+              minlength="1" maxlength="250"></textarea>
+            <mat-error *ngIf="
                 form.controls['message'].touched &&
                 form.controls['message'].hasError('required')
-              "
-            >
+              ">
               Message is required
             </mat-error>
           </mat-form-field>
@@ -325,29 +273,11 @@
   <section id="social" class="custom-section">
     <div class="container">
       <div class="form-button-div">
-        <button
-          class="social-button"
-          mat-icon-button
-          style="background: #333"
-          (click)="onSocial('github')"
-        >
-          <mat-icon
-            fontSet="fa"
-            fontIcon="fa-github"
-            class="social-icon"
-          ></mat-icon>
+        <button class="social-button" mat-icon-button style="background: #333" (click)="onSocial('github')">
+          <mat-icon fontSet="fa" fontIcon="fa-github" class="social-icon"></mat-icon>
         </button>
-        <button
-          class="social-button"
-          mat-icon-button
-          style="background: #2678b5"
-          (click)="onSocial('linkedIn')"
-        >
-          <mat-icon
-            fontSet="fa"
-            fontIcon="fa-linkedin"
-            class="social-icon"
-          ></mat-icon>
+        <button class="social-button" mat-icon-button style="background: #2678b5" (click)="onSocial('linkedIn')">
+          <mat-icon fontSet="fa" fontIcon="fa-linkedin" class="social-icon"></mat-icon>
         </button>
       </div>
     </div>
