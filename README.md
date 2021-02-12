@@ -1,3 +1,7 @@
+# Notice
+:warning: ** I created this website 2 years ago with my programming knowledge at the time. I will 
+be recreating this website soon with better coding practices and using react. Stay tuned!
+
 # MyWebsite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
