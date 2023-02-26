@@ -1,5 +1,5 @@
 # Notice
-:warning: ** I created this website 2 years ago with my programming knowledge at the time. I will 
+:warning: ** I created this website 3 years ago with my programming knowledge at the time. I will 
 be recreating this website soon with better coding practices and using react. Stay tuned!
 
 # MyWebsite
